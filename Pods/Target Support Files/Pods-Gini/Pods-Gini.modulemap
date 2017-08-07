@@ -1,0 +1,6 @@
+framework module Pods_Gini {
+  umbrella header "Pods-Gini-umbrella.h"
+
+  export *
+  module * { export * }
+}

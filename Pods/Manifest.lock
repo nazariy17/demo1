@@ -1,0 +1,38 @@
+PODS:
+  - Alamofire (4.4.0)
+  - AlamofireImage (3.2.0):
+    - Alamofire (~> 4.1)
+  - AlamofireXmlToObjects (2.1.0):
+    - Alamofire
+    - EVReflection
+    - XMLDictionary
+  - EVReflection (4.8.2):
+    - EVReflection/Core (= 4.8.2)
+  - EVReflection/Core (4.8.2)
+  - Realm (2.5.1):
+    - Realm/Headers (= 2.5.1)
+  - Realm/Headers (2.5.1)
+  - RealmSwift (2.5.1):
+    - Realm (= 2.5.1)
+  - SCLAlertView (0.7.0)
+  - XMLDictionary (1.4.1)
+
+DEPENDENCIES:
+  - AlamofireImage
+  - AlamofireXmlToObjects
+  - RealmSwift
+  - SCLAlertView
+
+SPEC CHECKSUMS:
+  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  AlamofireXmlToObjects: 3614c4945a5b154041ea9ade99644b5de66d5857
+  EVReflection: 0951547baf234bf0083de3a43d4b67cb00e5e90b
+  Realm: 32f86104d37c8521f864d4274050b38ba6190733
+  RealmSwift: f719e7511c902b8908593e8f143f59e47931bdb6
+  SCLAlertView: 8a14ffc40590c619e183eed2298b854385f30be1
+  XMLDictionary: fa07b6ff422b3a91d47a5de9bc82e3fc04fbd167
+
+PODFILE CHECKSUM: 31af6c473ed1bf95d376f07914dad184e6a6f51f
+
+COCOAPODS: 1.2.1
