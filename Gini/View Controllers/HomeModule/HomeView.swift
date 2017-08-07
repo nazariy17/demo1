@@ -48,11 +48,6 @@ class HomeView: UIViewController {
         refresh() //Prevent crash because of REALM - not a good solution since we should just stay with the same images but remove those cell we removed inside FAVORITE window
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     fileprivate func setup()
     {
@@ -169,24 +164,18 @@ extension HomeView: GridLayoutDelegate {
 
 extension HomeView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
-    
-    // MARK: - UICollectionViewDataSource protocol
-    
-    // tell the collection view how many sections to make
+
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return preGetDataLengt()+1 // the extra cell is for add button
     }
     
-    // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! HomeCollectionCell
         cell.delegate = self
         

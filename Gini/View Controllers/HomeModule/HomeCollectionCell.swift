@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import AlamofireImage
 import Alamofire
 
 @objc protocol HomeCollectionCellDelegate {
@@ -66,13 +65,11 @@ class HomeCollectionCell: UICollectionViewCell {
             
             switch response.result {
             case .success:
-                print("self.cellImage: ",self.cellImage.image ?? "qqqq")
                 if let image = response.result.value {
                     self.cellImage.image = image
                 }
                 self.cellFavoriteBtn.isHidden = false
             case .failure( _):
-                //print("Error: ",error)
                 let image = UIImage(named: "no_thumbnail")
                 self.cellImage.image = image
                 self.cellFavoriteBtn.isHidden = true //prevent adding no image to favorite

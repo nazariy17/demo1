@@ -28,11 +28,6 @@ class FavoriteView: UIViewController {
         setup()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     func setup()
     {
@@ -111,30 +106,24 @@ class FavoriteView: UIViewController {
 extension FavoriteView: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout
 {
     
-    // MARK: - UICollectionViewDataSource protocol
-    
-    // tell the collection view how many sections to make
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    // tell the collection view how many cells to make
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
         return preGetDataLengt() // the extra cell is for add button
     }
     
-    // make a cell for each cell index path
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        // get a reference to our storyboard cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! HomeCollectionCell
         cell.delegate = self
         
         //get data for current row
         let imgModel = dataArray[indexPath.row]
         
-        //set a image.. let's delegate this job to the cell itself
+        //set an image.. let's delegate this job to the cell itself
         cell.setImage(mImage: imgModel, isFavorite: true )
         
         return cell
