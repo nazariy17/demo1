@@ -40,12 +40,6 @@ extension HomeView //Communication between Presenter and Interactor
     
     
     
-    
-    func preInsertImage(at position:Int)
-    {
-        intInsertImage(at: position)
-    }
-    
     func preInsertImage(withItem item:ModelImage, at position:Int)
     {
         intInsertImage(withItem: item, at: position)

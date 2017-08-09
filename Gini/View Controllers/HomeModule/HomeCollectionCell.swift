@@ -23,7 +23,7 @@ class HomeCollectionCell: UICollectionViewCell {
     @IBOutlet weak var cellAddNewImagesBtn: UIButton!
     
     var isFavorite = false
-    var delegate:HomeCollectionCellDelegate?
+    weak var delegate:HomeCollectionCellDelegate?
     
     //main function used by parent to set data
     func setImage(mImage:ModelImage, isFavorite:Bool)
@@ -57,27 +57,28 @@ class HomeCollectionCell: UICollectionViewCell {
     
     func getImageFromInternet(urlString:String)
     {
-        cellLoader.isHidden = false
         cellLoader.startAnimating()
         
-        Alamofire.request(urlString).responseImage(completionHandler: { response in
-            //debugPrint(response)
-            //print("URL: \(urlString) | response.result: \(response.result)")
+        let inet = Network.getSharedNetwork()
+        inet.loadImageUsingString(urlStr: urlString, callback: { [weak self] (newUrlStr, imageToShow) -> Void in
+            //since we cant use unowned because it doesn't allow NIL, we use weak and check it in order to work only if we still have reference to it
+            //we lose reference as soon as we scroll out the cell from the screen
             
-            switch response.result {
-            case .success:
-                if let image = response.result.value {
-                    self.cellImage.image = image
+            if let thisCell = self {
+                if urlString == newUrlStr {
+                    if let img = imageToShow {
+                        thisCell.cellImage.image = img
+                    } else {
+                        thisCell.cellImage.image = UIImage(named: "no_thumbnail")
+                    }
+                    thisCell.cellFavoriteBtn.isHidden = false //prevent adding no image to favorite
+                } else {
+                    thisCell.cellFavoriteBtn.isHidden = true //prevent adding no image to favorite
                 }
-                self.cellFavoriteBtn.isHidden = false
-            case .failure( _):
-                let image = UIImage(named: "no_thumbnail")
-                self.cellImage.image = image
-                self.cellFavoriteBtn.isHidden = true //prevent adding no image to favorite
+                
+                thisCell.cellLoader.stopAnimating()
             }
             
-            self.cellLoader.stopAnimating()
-            self.cellLoader.isHidden = true
         })
     }
     

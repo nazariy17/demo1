@@ -29,6 +29,7 @@
 		7816E1331F1A2D6F0091589B /* FavoriteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816E1321F1A2D6F0091589B /* FavoriteInteractor.swift */; };
 		7816E1351F1A2D810091589B /* FavoritePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816E1341F1A2D810091589B /* FavoritePresenter.swift */; };
 		7816E1391F1B64210091589B /* PhotoSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7816E1381F1B64210091589B /* PhotoSave.swift */; };
+		78C7BF531F3B45A0007249FB /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C7BF521F3B45A0007249FB /* Network.swift */; };
 		7C21FEC24D8AB15E77838BE0 /* Pods_GiniTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B1A4CCAAA99DBD9CC686B84 /* Pods_GiniTests.framework */; };
 		8D374DD30F8D4DCE86A8555B /* Pods_Gini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A928E69F6DD7F88178CAD818 /* Pods_Gini.framework */; };
 /* End PBXBuildFile section */
@@ -84,6 +85,7 @@
 		7816E1321F1A2D6F0091589B /* FavoriteInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteInteractor.swift; sourceTree = "<group>"; };
 		7816E1341F1A2D810091589B /* FavoritePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritePresenter.swift; sourceTree = "<group>"; };
 		7816E1381F1B64210091589B /* PhotoSave.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoSave.swift; sourceTree = "<group>"; };
+		78C7BF521F3B45A0007249FB /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		9B5DCE82A94DF97EF3BDB9CE /* Pods-Gini.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gini.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gini/Pods-Gini.debug.xcconfig"; sourceTree = "<group>"; };
 		A834E5FD8189AE9925F7F8CB /* Pods-Gini.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gini.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gini/Pods-Gini.release.xcconfig"; sourceTree = "<group>"; };
 		A928E69F6DD7F88178CAD818 /* Pods_Gini.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gini.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,6 +237,7 @@
 				7816E1181F18F5F20091589B /* Database.swift */,
 				7816E1191F18F5F20091589B /* MyAlertView.swift */,
 				7816E1381F1B64210091589B /* PhotoSave.swift */,
+				78C7BF521F3B45A0007249FB /* Network.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -595,6 +598,7 @@
 				7816E1211F18F5F20091589B /* ModelImage.swift in Sources */,
 				7816E1251F18F5F20091589B /* MyAlertView.swift in Sources */,
 				7816E1241F18F5F20091589B /* Database.swift in Sources */,
+				78C7BF531F3B45A0007249FB /* Network.swift in Sources */,
 				7816E1311F1A2D560091589B /* FavoriteView.swift in Sources */,
 				7816E1291F18F5F20091589B /* HomeView.swift in Sources */,
 				7816E1221F18F5F20091589B /* CustomTextField.swift in Sources */,

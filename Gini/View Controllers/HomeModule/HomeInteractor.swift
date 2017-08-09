@@ -57,12 +57,6 @@ extension HomeView
     }
     
     
-    //Method responsible for adding new Image to a specific location
-    func intInsertImage(at position:Int)
-    {
-        //dataArray.insert(ModelImage.createRandomImage(), at: position)
-    }
-    
     func intInsertImage(withItem item:ModelImage, at position:Int)
     {
         dataArray.insert(item, at: position)
