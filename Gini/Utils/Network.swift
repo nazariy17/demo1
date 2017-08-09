@@ -38,19 +38,13 @@ class Network: NSObject {
     func loadImageUsingString(urlStr:String, callback: @escaping ((String, UIImage?) -> Void) ) {
         
         if let cachedImage = downloader.imageCache?.image(withIdentifier: urlStr) {
-            print("Cached Image")
             callback(urlStr, cachedImage)
         } else {
             let urlRequest = URLRequest(url: URL(string: urlStr)!)
             downloader.download(urlRequest) { response in
                 
-                print("Image from Internet")
-                
-                let size = CGSize(width: 300.0, height: 300.0)
-                let imageFilter = AspectScaledToFitSizeFilter(size: size)
-                
                 if let image = response.result.value {
-                    callback(urlStr, imageFilter.filter(image))
+                    callback(urlStr, image)
                     return
                 }
                 callback(urlStr, nil)

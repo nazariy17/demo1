@@ -58,22 +58,23 @@ class HomeCollectionCell: UICollectionViewCell {
     func getImageFromInternet(urlString:String)
     {
         cellLoader.startAnimating()
+        cellImage.image = nil //clean image before receiving new one
         
         let inet = Network.getSharedNetwork()
         inet.loadImageUsingString(urlStr: urlString, callback: { [weak self] (newUrlStr, imageToShow) -> Void in
             //since we cant use unowned because it doesn't allow NIL, we use weak and check it in order to work only if we still have reference to it
             //we lose reference as soon as we scroll out the cell from the screen
             
+            
             if let thisCell = self {
                 if urlString == newUrlStr {
-                    if let img = imageToShow {
-                        thisCell.cellImage.image = img
+                    thisCell.cellFavoriteBtn.isHidden = true //prevent adding no image to favorite
+                    if imageToShow != nil {
+                        thisCell.cellImage.image = imageToShow
+                        thisCell.cellFavoriteBtn.isHidden = false
                     } else {
                         thisCell.cellImage.image = UIImage(named: "no_thumbnail")
                     }
-                    thisCell.cellFavoriteBtn.isHidden = false //prevent adding no image to favorite
-                } else {
-                    thisCell.cellFavoriteBtn.isHidden = true //prevent adding no image to favorite
                 }
                 
                 thisCell.cellLoader.stopAnimating()
